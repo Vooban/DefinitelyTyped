@@ -5,6 +5,8 @@
 
 ///<reference path='../react/react.d.ts' />
 
+// cdroulers Hacked to work with react-intl 2.0.0-pr-3. Should not be trusted in the LEAST BIT. #memento
+
 declare module "react-intl" {
 
     import * as React from 'react'
@@ -66,7 +68,8 @@ declare module "react-intl" {
 
         module FormattedMessage {
             export interface Props extends IntlComponent.Props  {
-                message: string;
+                message?: string;
+                defaultMessage: string;
                 [prop: string]: any
             }
         }
@@ -91,6 +94,17 @@ declare module "react-intl" {
             }
         }
         class FormattedNumber extends React.Component<FormattedNumber.Props,any> {}
+
+
+        module IntlProvider {
+            export interface Props extends IntlComponent.Props {
+                locale?: string;
+                messages?: Object;
+                defaultLocale?: string;
+                defaultFormats?: Object;
+            }
+        }
+        class IntlProvider extends React.Component<IntlProvider.Props,any> {}
 
     }
 
