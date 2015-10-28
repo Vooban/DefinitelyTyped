@@ -7,11 +7,23 @@
 
 // cdroulers Hacked to work with react-intl 2.0.0-pr-3. Should not be trusted in the LEAST BIT. #memento
 
+declare module "react-intl/lib/locale-data/fr" {
+  var data: any;
+  export = data;
+}
+
+declare module "react-intl/lib/locale-data/en" {
+  var data: any;
+  export = data;
+}
+
 declare module "react-intl" {
 
     import * as React from 'react'
 
     module ReactIntl {
+        var injectIntl: any;
+        var addLocaleData: any;
 
 
         interface IIntlMixin extends React.Mixin<any,any> {
