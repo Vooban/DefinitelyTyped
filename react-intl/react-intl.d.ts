@@ -186,7 +186,7 @@ declare module "react-intl" {
             export interface Props {
                 locale?: string;
                 formats?: Object;
-                messages?: { [key: string]: string };
+                messages?: Object;
                 defaultLocale?: string;
                 defaultFormats?: Object;
             }
