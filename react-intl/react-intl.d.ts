@@ -81,7 +81,7 @@ declare module "react-intl" {
         module FormattedMessage {
             export interface Props extends IntlComponent.Props  {
                 message?: string;
-                defaultMessage: string;
+                defaultMessage?: string;
                 [prop: string]: any
             }
         }
